@@ -190,7 +190,6 @@ p {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  // padding-bottom: 25%;
   margin-top: 30px;
   height: 264px;
 }
@@ -316,5 +315,8 @@ label:not(.note) {
   }
   .dedication {
     background-position: center center;
+  }
+  .contact-form {
+    padding: 0px;
   }
 }

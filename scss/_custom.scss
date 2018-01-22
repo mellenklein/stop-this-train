@@ -1,0 +1,320 @@
+@font-face {
+  font-family: "Myriad Pro";
+  src: url('../fonts/MyriadPro-Cond.eot'); /* for IE */
+	src: url("../fonts/MyriadPro-Cond.otf") format("opentype"), url("../fonts/MyriadPro-Cond.ttf") format("truetype"), url("../fonts/MyriadPro-Cond.woff") format("woff"), url("../fonts/MyriadPro-Cond.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Myriad Pro Bold";
+  font-weight: bold;
+  src: url('../fonts/MyriadPro-BoldCond.eot'); /* for IE */
+	src: url("../fonts/MyriadPro-BoldCond.otf") format("opentype"), url("../fonts/MyriadPro-BoldCond.ttf") format("truetype"), url("../fonts/MyriadPro-BoldCond.woff") format("woff"), url("../fonts/MyriadPro-BoldCond.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Blue Highway";
+  src: url('../fonts/bluecond.eot'); /* for IE */
+	src: url("../fonts/bluecond.otf") format("opentype"), url("../fonts/bluecond.ttf") format("truetype"), url("../fonts/bluecond.woff") format("woff"), url("../fonts/bluecond.woff2") format("woff2");
+}
+
+
+  //-------------------------------------------//
+ //------------- Global Styles: --------------//
+//-------------------------------------------//
+body {
+  background-color: $train-tan;
+  background-image: url('../images/wood-bg.jpg');
+}
+.bio-page {
+  background-image: url('../images/paper-bg.jpg');
+  background-size: cover;
+}
+.tb-pad-15 {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.tb-pad-30 {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.tb-pad-60 {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+.tb-pad-90 {
+	padding-top: 90px;
+	padding-bottom: 90px;
+}
+.tb-pad-120 {
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+.no-pad {
+  padding-left: 0;
+  padding-right: 0;
+}
+.show-for-ie9 {
+	display: none;
+}
+.allcaps {
+  text-transform: uppercase;
+}
+
+
+// Nav menu:
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
+}
+.top-bar {
+  background-color: $train-black;
+}
+.top-bar ul {
+  background-color: $train-black;
+}
+.header-logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+.header-logo-full {
+  height: 55px;
+}
+.menu {
+  .menu-text {
+    font-family: 'Blue Highway', 'Helvetica', serif;
+    font-size: 45px;
+    letter-spacing: 1px;
+    color: #c8c1ba;
+    font-weight: normal;
+  }
+  li:last-child a::after {
+    content: none;
+  }
+  a {
+    font-family: 'Blue Highway', 'Helvetica', serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    padding: 11px 16px;
+    transition: 0.3s color ease-in-out;
+    &:hover {
+      color: $train-tan;
+      font-size: 35px;
+      padding: 10px 12px 10px 13px;
+    }
+    &::after {
+      content: "/";
+      margin-left: 1rem;
+      color: white;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .logo-link {
+    padding: 0px;
+    &:hover {
+      padding: 0px;
+    }
+  }
+}
+h1,h2,h3,h4,h5 {
+  text-transform: uppercase;
+}
+h1 {
+  color: $train-red;
+  font-size: 80px;
+}
+h2 {
+  font-size: 50px;
+}
+h3 {
+  font-size: 40px;
+}
+h4 {
+  font-size: 30px;
+}
+h5 {
+  font-size: 24px;
+}
+h6 {
+  font-size: 30px;
+}
+.mcb {
+  font-family: 'Myriad Pro Bold';
+}
+.lowercase {
+  text-transform: lowercase;
+}
+p {
+  font-size: 20px;
+}
+.button.primary {
+  padding: 0.85em 3.5em;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.button.secondary {
+  padding: 0.85em 3.5em;
+  text-transform: uppercase;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+// Home Page
+.intro {
+  background-image: url('../images/train-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  h4 {
+    font-family: 'Myriad Pro Bold';
+    margin-bottom: 0px;
+  }
+}
+
+// Writings Page
+.writings-header {
+  background-image: url('../images/writings-header.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  // padding-bottom: 25%;
+  margin-top: 30px;
+  height: 264px;
+}
+.slider-section {
+  background-color: $train-tan;
+}
+
+// Bio Page
+.bio-header {
+  background-image: url('../images/bio-text.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  height: 170px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.bio-page {
+  .bg-img {
+    background-image: url('../images/headshot.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right top;
+    padding-bottom: 100%;
+    margin: 10px auto 30px;
+  }
+  .headshot-sm {
+    background-image: url('../images/headshot01.jpg');
+    background-position: left center;
+    background-size: cover;
+  }
+}
+.dedication {
+  background-image: url('../images/dedication.png');
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+.dedication-content {
+  padding-bottom: 120px;
+}
+
+// Contact page
+.contact-header {
+  background-image: url('../images/contact-header.png');
+  position: relative;
+}
+.lantern-bg {
+  background-image: url('../images/lantern-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 200px;
+  margin-top: -80px;
+}
+.light-bg {
+  background-color: #f5f6f7;
+}
+.contact-form {
+  padding: 30px;
+}
+.form-element {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+input[type="text"] {
+  height: 50px;
+}
+
+input[type="text"],
+textarea {
+  border-color: $train-gray;
+  margin-bottom: 3px;
+}
+label:not(.note) {
+  font-size: 20px;
+  color: $train-gray;
+  text-transform: uppercase;
+}
+.envelope {
+  height: 40px;
+  margin-right: 5px;
+  margin: 5px 10px 5px 0;
+}
+.email-link {
+  font-size: 20px;
+  color: $train-gray;
+}
+
+// Media Queries
+@media (max-width: 639px) {
+  .menu a::after {
+    content: none;
+  }
+  .menu li {
+    width: 100%;
+    text-align: center;
+  }
+  .menu a {
+    font-size: 40px;
+    &:hover {
+      color: #a19481;
+      font-size: 40px;
+      padding: 11px 16px;
+    }
+  }
+  .header-logo-full {
+    height: 40px;
+    max-width: 100%;
+    margin-right: 15px;
+  }
+  .title-bar {
+    justify-content: flex-end;
+    background-color: $train-black;
+  }
+  .bio-page .bg-img {
+    background-position: center center;
+  }
+  .bio-page .headshot-sm {
+    background-size: contain;
+  }
+  .dedication {
+    background-position: center center;
+  }
+}

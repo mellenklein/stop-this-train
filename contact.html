@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <div class="title-bar right" data-responsive-toggle="nav-menu" data-hide-for="medium">
+      <div class="title-bar-title"><a href="/" class="logo-link"><img class="header-logo-full" src="/images/jm-logo-full.png" alt="Jerry McInstosh"></a></div>
+      <button class="menu-icon" type="button" data-toggle></button>
+    </div>
+
+    <div class="top-bar" id="nav-menu" data-animate="hinge-in-from-top hinge-out-from-top">
+      <div class="top-bar-left">
+        <ul class="menu" data-dropdown-menu>
+          <li class="menu-text show-for-medium">
+            <a href="/" class="logo-link"><img class="header-logo-full" src="/images/jm-logo-full.png" alt="Jerry McInstosh"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu" data-dropdown-menu>
+          <li><a href="/">Home</a></li>
+          <li><a href="/writings">Writings</a></li>
+          <li><a href="/bio">Bio</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="writings-header contact-header"></div>
+
+    <div class="lantern-bg tb-pad-60">
+      <div class="row">
+        <div class="columns large-5 medium-4"></div>
+        <div class="columns large-7 medium-8 light-bg">
+          <form class="contact-form" action="." method="post">
+            <div class="row">
+              <div class="columns medium-6 form-element">
+                <label for="">Name*</label>
+                <input type="text" name="firstname" value="">
+                <label class="note" for="firstname">First Name</label>
+              </div>
+              <div class="columns medium-6 form-element">
+                <label for="" class="show-for-medium">&nbsp;</label>
+                <input type="text" name="lastname" value="">
+                <label class="note" for="lastname">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="columns large-12 form-element">
+                <label for="email">Email Address*</label>
+                <input type="text" name="email" value="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="columns large-12 form-element">
+                <label for="message">Message*</label>
+                <textarea name="message" rows="8" cols="80"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="columns medium-5 form-element">
+                <a href="#" id="submit-btn" class="button secondary">Submit</a>
+              </div>
+              <div class="columns medium-7 form-element">
+                <img src="/images/envelope.jpg" alt="" class="envelope">
+                <a href="mailto:jerrymcintosh@yahoo.com" class="email-link mcb">jerrymcintosh@yahoo.com</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/what-input/dist/what-input.js"></script>
+    <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

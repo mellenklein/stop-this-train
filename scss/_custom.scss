@@ -77,6 +77,9 @@ body {
 }
 .top-bar {
   background-color: $train-black;
+  display: block;
+  position: absolute;
+  width: 100%;
 }
 .top-bar ul {
   background-color: $train-black;

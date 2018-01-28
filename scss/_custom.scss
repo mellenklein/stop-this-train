@@ -319,6 +319,10 @@ label:not(.note) {
   color: $train-gray;
   text-transform: uppercase;
 }
+label.error {
+  color: red;
+  font-size: 16px;
+}
 .envelope {
   height: 40px;
   margin-right: 5px;
@@ -327,6 +331,9 @@ label:not(.note) {
 .email-link {
   font-size: 20px;
   color: $train-gray;
+}
+#messageShell {
+  padding: 60px 0px;
 }
 
 // Media Queries

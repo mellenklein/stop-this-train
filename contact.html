@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>Stop The Train</title>
     <link rel="stylesheet" href="./css/app.css">
   </head>
   <body>
@@ -37,34 +37,39 @@
       <div class="row">
         <div class="columns large-5 medium-4"></div>
         <div class="columns large-7 medium-8 light-bg">
-          <form class="contact-form" action="." method="post">
+          <div id="messageShell" style="display:none;">
+            <h3 class="text-center">Thank You.</h3>
+            <p class="text-center">Your message has been sent.</p>
+          </div>
+          <form class="contact-form" id="contactForm" action="." method="post">
             <div class="row">
               <div class="columns medium-6 form-element">
                 <label for="">Name*</label>
-                <input type="text" name="firstname" value="">
+                <input type="text" required name="firstname" value="">
                 <label class="note" for="firstname">First Name</label>
               </div>
               <div class="columns medium-6 form-element">
                 <label for="" class="show-for-medium">&nbsp;</label>
-                <input type="text" name="lastname" value="">
+                <input type="text" required name="lastname" value="">
                 <label class="note" for="lastname">Last Name</label>
               </div>
             </div>
             <div class="row">
               <div class="columns large-12 form-element">
                 <label for="email">Email Address*</label>
-                <input type="text" name="email" value="">
+                <input type="text" required name="email" value="">
               </div>
             </div>
             <div class="row">
               <div class="columns large-12 form-element">
                 <label for="message">Message*</label>
-                <textarea name="message" rows="8" cols="80"></textarea>
+                <textarea name="message" required rows="8" cols="80"></textarea>
               </div>
             </div>
             <div class="row">
               <div class="columns medium-5 form-element">
-                <a href="#" id="submit-btn" class="button secondary">Submit</a>
+                <!-- <a href="#" id="contactBtn" class="button secondary">Submit</a> -->
+                <button type="submit" class="button secondary" id="contactBtn">Submit</button>
               </div>
               <div class="columns medium-7 form-element">
                 <img src="./images/envelope.jpg" alt="" class="envelope">
@@ -80,5 +85,52 @@
     <script src="./bower/what-input/dist/what-input.min.js"></script>
     <script src="./bower/foundation-sites/dist/foundation.min.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./plugins/validate/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        $('#contactBtn').click(function(e){
+          e.preventDefault();
+          $('#contactForm').submit();
+         });
+
+         $('#contactForm').submit(function(e) {
+           e.preventDefault();
+         }).validate({
+          rules: {
+            email: {
+              required: true,
+              email: true
+            }
+          },
+          submitHandler: function(form) {
+
+            var formData = $('#contactForm').serialize();
+            formData += '&action=contact-form';
+            // $.ajax({
+            //    type: 'POST',
+            //    url: '/ajax.contact',
+            //    data: formData,
+            //    success: function(data){
+            //      if (data.status == 'error') {
+            //       $('#errorShell').html('Oops! An error occurred while processing your answers.');
+            //       $('#messageShell h3').hide();
+            //       $('#messageShell p').html('There was a problem processing your message. Please try again.').css('color', 'red');
+            //       $('#messageShell').show();
+            //     } else {
+            //       //successful
+            //       $('#contactForm').slideUp(500);
+            //       $('.title-text').slideUp(500);
+            //       $('#messageShell').slideDown(500);
+            //     }
+            //    }
+            //  });
+            $('#contactForm').slideUp();
+            $('#messageShell').slideDown();
+          }
+        });
+
+      }); //end of document.ready
+    </script>
   </body>
 </html>

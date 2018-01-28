@@ -4,13 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>Stop The Train</title>
     <link rel="stylesheet" href="./css/app.css">
+
+    <!-- These files are required only for the 'Writings' page: -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
 
 ">
     <link rel="stylesheet" href="./plugins/slick/slick.css">
     <link rel="stylesheet" href="./plugins/magnific-popup/magnific-popup.css">
+    <!-- end of files specific to Writings page -->
   </head>
   <body>
     <div class="title-bar right" data-responsive-toggle="nav-menu" data-hide-for="medium">
@@ -36,8 +39,10 @@
       </div>
     </div>
 
+    <!-- 'Writings' page starts here: -->
     <div class="writings-header"></div>
 
+    <!-- Slider starts here: -->
 		<div class="slider-section">
 			<div class="row">
 				<div class="columns small-1">&nbsp;</div>
@@ -74,19 +79,19 @@
 				<div class="columns small-1">&nbsp;</div>
 			</div>
 		</div>
-    <div id="test-popup" class="white-popup mfp-hide">
-      Popup content
-    </div>
+    <!-- end of Slider section -->
 
     <script src="./bower/jquery/dist/jquery.min.js"></script>
     <script src="./bower/what-input/dist/what-input.min.js"></script>
     <script src="./bower/foundation-sites/dist/foundation.min.js"></script>
     <script src="./js/app.js"></script>
+
+    <!-- JavaScript from here down is required only for the 'Writings' page: -->
     <script src="./plugins/slick/slick.min.js"></script>
     <script src="./plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script type="text/javascript">
-
       $(document).ready(function(){
+        //------ Slick Slider code: --------//
         $('.books').slick({
           slidesToShow: 5,
           slidesToScroll: 1,
@@ -114,19 +119,10 @@
                 slidesToScroll: 1
               }
             },
-            {
-              breakpoint: 480,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            }
           ]
         });
 
-
-        // From HTML string
-
+        //------ Magnific Popup modal code: --------//
         $('.slide img').magnificPopup({
           items: {
             src: $('<div class="white-popup"></div>'),
@@ -135,6 +131,8 @@
         });
         $('.slide img').click(function(){
         	console.log($(this)[0].nextElementSibling.innerText);
+
+          // Reset modal content on click of book image:
           $('.white-popup').html('');
 
           var closeBtn = '<button title="Close (Esc)" type="button" class="mfp-close">×</button>';
@@ -143,20 +141,17 @@
           var bookTitle = $(this)[0].dataset.title;
           var bookDescription = $(this)[0].nextElementSibling.innerText;
 
+          // Modal content:
           var content = '<div class="row popup-content">';
           content += '<div class="columns medium-6 left-col">';
           content += '<img src="'+src+'" /></div>';
-
           content += '<div class="columns medium-6 right-col">';
           content += '<h4>'+bookTitle+'</h4><p>'+bookDescription+'</p>';
           content += readMoreBtn+'</div></div>';
 
+          // After modal is built out, append to white popup:
           $('.white-popup').append(closeBtn+content);
         });
-
-
-        // var testimonalHeight = $('.caption').height();
-        // $('.testimonials .bg-img').height((testimonalHeight+80)+'px');
       }); // end of document.ready
     </script>
   </body>

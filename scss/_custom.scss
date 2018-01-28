@@ -24,8 +24,15 @@
 body {
   background-color: $train-tan;
   background-image: url('../images/wood-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 .bio-page {
+  background-image: url('../images/paper-bg.jpg');
+  background-size: cover;
+}
+.home {
   background-image: url('../images/paper-bg.jpg');
   background-size: cover;
 }
@@ -77,8 +84,8 @@ body {
 }
 .top-bar {
   background-color: $train-black;
-  display: block;
-  position: absolute;
+  // display: block;
+  // position: absolute;
   width: 100%;
 }
 .top-bar ul {
@@ -90,7 +97,7 @@ body {
   margin-right: 15px;
 }
 .header-logo-full {
-  height: 55px;
+  max-height: 55px;
 }
 .menu {
   .menu-text {
@@ -113,8 +120,6 @@ body {
     transition: 0.3s color ease-in-out;
     &:hover {
       color: $train-tan;
-      font-size: 35px;
-      padding: 10px 12px 10px 13px;
     }
     &::after {
       content: "/";
@@ -180,6 +185,7 @@ p {
   background-image: url('../images/train-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh;
   background-position: center center;
   h4 {
     font-family: 'Myriad Pro Bold';
@@ -197,8 +203,47 @@ p {
   height: 264px;
 }
 .slider-section {
-  background-color: $train-tan;
+  img:hover {
+    cursor: pointer;
+  }
 }
+.slick-slide img {
+  margin: 0 auto;
+}
+.slick-arrow {
+  width: 73px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  color: rgba(35, 31, 32, 0.50);
+  transition: 0.3s color ease-in-out;
+  &:hover {
+    color: $train-black;
+    cursor: pointer;
+  }
+  .fa {
+    font-size: 48px;
+    transition: 0.3s color ease-in-out;
+  }
+}
+.slick-prev {
+  left: -8.33333%;
+}
+.slick-next {
+  left: auto;
+  right: -8.33333%;
+  padding-right: 1px;
+}
+.white-popup {
+  position: relative;
+  background: #ffffff;
+  padding: 20px;
+  width: auto;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
 
 // Bio Page
 .bio-header {
@@ -285,6 +330,20 @@ label:not(.note) {
 }
 
 // Media Queries
+@media (max-width: 1023px) {
+  h1 {
+    line-height: 1;
+    font-size: 60px;
+  }
+}
+@media (max-width: 840px) {
+  .header-logo-full {
+    max-height: 30px;
+  }
+  .menu a {
+    padding: 11px 12px;
+  }
+}
 @media (max-width: 639px) {
   .menu a::after {
     content: none;
@@ -310,6 +369,9 @@ label:not(.note) {
     justify-content: flex-end;
     background-color: $train-black;
   }
+  .intro {
+    background-image: none;
+  }
   .bio-page .bg-img {
     background-position: center center;
   }
@@ -321,5 +383,11 @@ label:not(.note) {
   }
   .contact-form {
     padding: 0px;
+  }
+  .slick-arrow {
+    width: 8.33333%;
+    .fa {
+      font-size: 40px;
+    }
   }
 }

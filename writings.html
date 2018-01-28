@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation for Sites</title>
     <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+
+">
+    <link rel="stylesheet" href="./plugins/slick/slick.css">
+    <link rel="stylesheet" href="./plugins/magnific-popup/magnific-popup.css">
   </head>
   <body>
     <div class="title-bar right" data-responsive-toggle="nav-menu" data-hide-for="medium">
@@ -35,21 +40,127 @@
 
 		<div class="slider-section">
 			<div class="row">
-				<div class="columns medium-2">
-					<h3><</h3>
+				<div class="columns small-1">&nbsp;</div>
+				<div class="columns small-10 books">
+					<div class="slide">
+            <img src="/images/book01.jpg" data-title="All Around The Moon" alt="">
+            <p class="hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. All Around The Moon.</p>
+          </div>
+					<div class="slide">
+            <img src="/images/book06.jpg" data-title="The Green Fairy Book" alt="">
+            <p class="hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The Green Fairy Book.</p>
+          </div>
+					<div class="slide">
+            <img src="/images/book07.jpg" data-title="Uncle James's Sketch Book" alt="">
+            <p class="hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+          </div>
+					<div class="slide">
+            <img src="/images/book04.jpg" data-title="Dreaming and Doing" alt="">
+            <p class="hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+          </div>
+					<div class="slide">
+            <img src="/images/book03.jpg" data-title="Orchids" alt="">
+            <p class="hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+          </div>
+					<div class="slide">
+            <img src="/images/book05.jpg" data-title="Un Hivernage Dans Les Glaces" alt="">
+            <p class="hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+          </div>
+					<div class="slide">
+            <img src="/images/book02.jpg" data-title="Peter and Wendy" alt="">
+            <p class="hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+          </div>
 				</div>
-				<div class="columns medium-10">
-					<p>slider here</p>
-				</div>
-				<div class="columns medium-2">
-					<h3>></h3>
-				</div>
+				<div class="columns small-1">&nbsp;</div>
 			</div>
 		</div>
+    <div id="test-popup" class="white-popup mfp-hide">
+      Popup content
+    </div>
 
     <script src="./bower/jquery/dist/jquery.min.js"></script>
     <script src="./bower/what-input/dist/what-input.min.js"></script>
     <script src="./bower/foundation-sites/dist/foundation.min.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./plugins/slick/slick.min.js"></script>
+    <script src="./plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript">
+
+      $(document).ready(function(){
+        $('.books').slick({
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          arrows: true,
+          autoplay: false,
+          speed: 400,
+          dots: false,
+          infinite: true,
+          adaptiveHeight: true,
+          customPaging : function(slider, i) {
+           return '<img src="/images/dot.png" /><img src="/images/dot-active.png" />';
+          },
+          prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></button>',
+          nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+          cssEase: 'linear',
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+              }
+            },
+            {
+              breakpoint: 640,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
+        });
+
+
+        // From HTML string
+
+        $('.slide img').magnificPopup({
+          items: {
+            src: $('<div class="white-popup"></div>'),
+            type: 'inline'
+          }
+        });
+        $('.slide img').click(function(){
+        	console.log($(this)[0].nextElementSibling.innerText);
+          $('.white-popup').html('');
+
+          var closeBtn = '<button title="Close (Esc)" type="button" class="mfp-close">×</button>';
+          var readMoreBtn = '<a href="#" class="button primary large">Read More</a>'
+          var src = $(this)[0].src;
+          var bookTitle = $(this)[0].dataset.title;
+          var bookDescription = $(this)[0].nextElementSibling.innerText;
+
+          var content = '<div class="row popup-content">';
+          content += '<div class="columns medium-6 left-col">';
+          content += '<img src="'+src+'" /></div>';
+
+          content += '<div class="columns medium-6 right-col">';
+          content += '<h4>'+bookTitle+'</h4><p>'+bookDescription+'</p>';
+          content += readMoreBtn+'</div></div>';
+
+          $('.white-popup').append(closeBtn+content);
+        });
+
+
+        // var testimonalHeight = $('.caption').height();
+        // $('.testimonials .bg-img').height((testimonalHeight+80)+'px');
+      }); // end of document.ready
+    </script>
   </body>
 </html>

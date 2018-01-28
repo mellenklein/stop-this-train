@@ -6,16 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stop The Train</title>
     <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+    <link rel="manifest" href="./favicons/manifest.json">
+    <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#0c1517">
+    <meta name="msapplication-config" content="./favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- These files are required only for the 'Writings' page: -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
-
-">
     <link rel="stylesheet" href="./plugins/slick/slick.css">
     <link rel="stylesheet" href="./plugins/magnific-popup/magnific-popup.css">
     <!-- end of files specific to Writings page -->
   </head>
-  <body>
+  <body class="writings-page">
     <div class="title-bar right" data-responsive-toggle="nav-menu" data-hide-for="medium">
       <div class="title-bar-title"><a href="./" class="logo-link"><img class="header-logo-full" src="./images/jm-logo-full.png" alt="Jerry McInstosh"></a></div>
       <button class="menu-icon" type="button" data-toggle></button>
@@ -39,7 +45,7 @@
       </div>
     </div>
 
-    <!-- 'Writings' page starts here: -->
+    <!-- 'Writings' page content starts here: -->
     <div class="writings-header"></div>
 
     <!-- Slider starts here: -->
@@ -80,6 +86,8 @@
 			</div>
 		</div>
     <!-- end of Slider section -->
+
+    <!-- end of 'Writings' page content -->
 
     <script src="./bower/jquery/dist/jquery.min.js"></script>
     <script src="./bower/what-input/dist/what-input.min.js"></script>
@@ -152,7 +160,7 @@
           // After modal is built out, append to white popup:
           $('.white-popup').append(closeBtn+content);
         });
-      }); // end of document.ready
+      });
     </script>
   </body>
 </html>

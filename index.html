@@ -15,12 +15,15 @@
     <meta name="msapplication-config" content="./favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
   </head>
-  <body class="home">
+  <!-- NOTE::: -->
+  <!-- Every page needs a class on the body tag: i.e. class="home-page // bio-page // contact-page // writings-page" -->
+  <body class="home-page">
+
+    <!-- Global Nav starts here: -->
     <div class="title-bar right" data-responsive-toggle="nav-menu" data-hide-for="medium">
       <div class="title-bar-title"><a href="./" class="logo-link"><img class="header-logo-full" src="./images/jm-logo-full.png" alt="Jerry McInstosh"></a></div>
       <button class="menu-icon" type="button" data-toggle></button>
     </div>
-
     <div class="top-bar" id="nav-menu" data-animate="hinge-in-from-top hinge-out-from-top">
       <div class="top-bar-left">
         <ul class="menu" data-dropdown-menu>
@@ -38,7 +41,9 @@
         </ul>
       </div>
     </div>
+    <!-- end of Global Nav -->
 
+    <!-- Home page content starts here: -->
     <div class="intro">
       <div class="row tb-pad-120">
         <div class="columns medium-6">
@@ -50,6 +55,7 @@
         </div>
       </div>
     </div>
+    <!-- end of Home page content -->
 
     <script src="./bower/jquery/dist/jquery.min.js"></script>
     <script src="./bower/what-input/dist/what-input.min.js"></script>

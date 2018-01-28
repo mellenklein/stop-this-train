@@ -1,10 +1,1 @@
 .DS_Store
-bower_components
-node_modules
-npm-debug.log
-.bowerrc
-CHANGELOG.md
-README.md
-bower.json
-gulpfile.js
-package.json
